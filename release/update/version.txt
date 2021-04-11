@@ -1,8 +1,8 @@
 {
-    "description":"更新了Xray内核到1.3.0版本！添加了http/https出站代理！",
+    "description":"默认Xray核心更新到1.4.2版本! 更快更安全！",
     "format":".lzma",
     "main":"\\WinXray.exe",
     "updater":"\\WinXray.exe",
-    "url":"https://raw.githubusercontent.com/TheMRLL/winXray/main/release/update/",
-    "version":"2.6"
+    "url":"https://raw.githubusercontent.com/TheMRLL/winxray/main/release/update/",
+    "version":"3.2"
 }
