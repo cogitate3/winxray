@@ -184,6 +184,11 @@ write  = function(jsonPath,outbound,sockPort,httpPort){
 				}
 			}
 		}
+		elseif( outbound.network == "grpc" ){
+			ob.streamSettings.grpcSettings = {
+				serviceName = outbound.grpcSni;
+			}
+		}
 		
 		..table.assign(proxyOutboundInCore,ob); 
 	}
@@ -195,8 +200,8 @@ write  = function(jsonPath,outbound,sockPort,httpPort){
 				concurrency=outbound.concurrency;
 				enabled=outbound.concurrency ? ( outbound.concurrency > 0)
 			} : {
-				concurrency=-1;
-				enabled=false
+				concurrency=8;
+				enabled=true
 			}; 
 			protocol="vmess";
 			settings={
@@ -301,6 +306,11 @@ write  = function(jsonPath,outbound,sockPort,httpPort){
 				}
 			}
 		}
+		elseif( outbound.network == "grpc" ){
+			ob.streamSettings.grpcSettings = {
+				serviceName = outbound.grpcSni;
+			}
+		}
 		
 		..table.assign(proxyOutboundInCore,ob); 
 	}
@@ -379,7 +389,6 @@ write  = function(jsonPath,outbound,sockPort,httpPort){
 			};
 			streamSettings={
 				network = outbound.network : "tcp";
-				obfs = outbound.obfs : "";
 			};
 			tag="proxy"
 		};
